@@ -1,17 +1,11 @@
 # Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Para encontrar la documentación completa visite el siguiente enlace:  [github.com](https://github.com/Sabasaro12/Metodo_RK4.git).
 
-## Commands
+\title{Sistemas Dinámicos}
+Los sistemas dinámicos son modelos de suma importancia en las ciencias. En general, un modelo dinámico intenta resolver la trayectoria temporal de alguna cantidad física como función de algún generador dinámico; este último usualmente representado de forma funcional.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+En algunos casos, podemos modelar la dinámica de un estado genérico 𝑦
+mediante la ecuación dinámica
+$$\$$
