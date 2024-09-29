@@ -8,9 +8,8 @@ plugins:
   - mkdocstrings
 
 nav:
-  - Calculation Docs: index.md
+  -  index.md
   - tutorials.md
-  - How-To Guides: how-to-guides.md
   - reference.md
   - explanation.md
 
