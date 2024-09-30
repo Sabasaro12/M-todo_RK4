@@ -275,13 +275,14 @@
 <p>Los sistemas dinámicos son modelos de suma importancia en las ciencias. En general, un modelo dinámico intenta resolver la trayectoria temporal de alguna cantidad física como función de algún generador dinámico; este último usualmente representado de forma funcional.</p>
 <p>En algunos casos, podemos modelar la dinámica de un estado genérico 𝑦
 mediante la ecuación dinámica</p>
-<p>$$\frac{dy}{dt}=f(t,y);\hspace{3mm} $$</p>
+<div class="arithmatex">\[\frac{dy}{dt}=f(t,y)\hspace{3mm} \]</div>
 <p>La cuál se encuentra sujeta a la siguiente condición inicial:</p>
-<p>$$y(t_0)=y_0$$
-En esta notación, 𝑦 corresponde a un estado del sistema. Este estado puede ser representado mediante diferentes objetos matemáticos: desde cantidades escalares hasta matrices que representan cierto operador lineal. En la ecuación anterior, 𝑡</p>
-<p>corresponde a la variable temporal.</p>
+<div class="arithmatex">\[ y(t_0)=y_0 \]</div>
+<p>En esta notación, <span class="arithmatex">\(y\)</span> corresponde a un estado del sistema. Este estado puede ser representado mediante diferentes objetos matemáticos: desde cantidades escalares hasta matrices que representan cierto operador lineal. En la ecuación anterior, <span class="arithmatex">\(t\)</span> corresponde a la variable temporal.</p>
 <p>El problema dinámico descrito anteriormente es usualmente conocido en el campo de las matemáticas aplicadas como problema de condición inicial. </p>
-<p>La herramienta que se esta implementando en estos casos perminte resolver \textbf{únicamente el caso donde no existe dependencia explı́cita temporal en la función}</p>
+<p>En este caso se va a estudiar a evolución temporal de un estado 𝐲(𝑡). Este estado será representado mediante una matriz 2x2 que corresponde a algún operador lineal. La función que genra la dinámica del problema es </p>
+<div class="arithmatex">\[𝑓(𝑡,𝐲)=−i[𝐎,𝐲(𝑡)],\]</div>
+<p>Donde 𝐎 es otro operador lineal, i es la constante compleja y [𝐴,𝐵]=𝐴𝐵−𝐵𝐴 es un operación de conmutación. La herramienta que se esta implementando en estos casos perminte resolver <strong>únicamente el caso donde no existe dependencia explı́cita temporal en la función</strong> tal como lo es este caso. </p>
 
 
 
@@ -332,6 +333,10 @@ En esta notación, 𝑦 corresponde a un estado del sistema. Este estado puede s
     
     
       <script src="assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
