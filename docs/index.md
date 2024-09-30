@@ -1,4 +1,4 @@
-# Sistemas dinámicos y el método RK4
+# Sistemas dinámicos
 Para encontrar la documentación completa visite el siguiente enlace:  [github.com](https://github.com/Sabasaro12/Metodo_RK4.git).
 
 Los sistemas dinámicos son modelos de suma importancia en las ciencias. En general, un modelo dinámico intenta resolver la trayectoria temporal de alguna cantidad física como función de algún generador dinámico; este último usualmente representado de forma funcional.
