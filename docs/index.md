@@ -1,4 +1,4 @@
-# Welcome to MkDocs
+# Sistemas dinámicos y el método RK4
 
 Para encontrar la documentación completa visite el siguiente enlace:  [github.com](https://github.com/Sabasaro12/Metodo_RK4.git).
 
@@ -8,4 +8,4 @@ Los sistemas dinámicos son modelos de suma importancia en las ciencias. En gene
 
 En algunos casos, podemos modelar la dinámica de un estado genérico 𝑦
 mediante la ecuación dinámica
-$$\$$
+$$\frac{dy}{dt}=f(t,y);\hspace{3mm} y(t_0)=y_0 $$
