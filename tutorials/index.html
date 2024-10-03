@@ -339,32 +339,44 @@
     <div class="doc doc-contents first">
 
         <p>Ejemplo del uso del programa</p>
-
-
-<p><span class="doc-section-title">Examples:</span></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">RK4</span> <span class="kn">import</span> <span class="n">rk4</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">oOper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">yInit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stateQuant00</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">stateQuant11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">times</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">times</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">tt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
-<span class="go">    &gt;&gt;&gt; stateQuant00[tt] = yInit[0,0].real</span>
-<span class="go">    &gt;&gt;&gt; stateQuant11[tt] = yInit[1,1].real</span>
-<span class="go">    &gt;&gt;&gt; yN = rk4.rk4(rk4.dyn_generator,oOper,yInit,h)</span>
-<span class="go">    &gt;&gt;&gt; yInit = yN</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">stateQuant00</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estado (0,0)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">stateQuant11</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estado (1,1)&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor del estado&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
-        <p><img alt="Evolucion temporal" src="../Images/Figure_1.png" /></p>
+<p>Se importan los modulos necesarios para realizar la operación</p>
+<pre><code>&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from RK4 import rk4
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+</code></pre>
+<p>Se crean dos arreglos, uno que contiene el estado inicial del sistema y otro el estado inicial del operador</p>
+<pre><code>&gt;&gt;&gt; oOper = np.array([[0, 1], [1, 0]])
+&gt;&gt;&gt; yInit = np.array([[1, 0], [0, 0]])
+</code></pre>
+<p>Se crea un arreglo que contendrá todas las subdiviciones del período de tiempo especificado</p>
+<pre><code>&gt;&gt;&gt; times = np.linspace(0,10,100).astype(float)
+</code></pre>
+<p>Se crean dos arreglos que contendran los valores de las variaciones para los dos posbiles estados</p>
+<pre><code>&gt;&gt;&gt; stateQuant00 = np.zeros(times.size)
+&gt;&gt;&gt; stateQuant11 = np.zeros(times.size)
+</code></pre>
+<p>Se identifica la variación temporal que hay entre cada medición y este valor se le asiga a una variable</p>
+<pre><code>&gt;&gt;&gt; h = times[1]-times[0]
+</code></pre>
+<p>Se realiza un ciclo for para evaluar la variación de los estados con forme el tiempo avanza, y se almacenan los valores de la matriz en posicion [0,0] y [1,1] en los arreglos</p>
+<pre><code>&gt;&gt;&gt; for tt in range(times.size):
+    &gt;&gt;&gt; stateQuant00[tt] = yInit[0,0].real
+    &gt;&gt;&gt; stateQuant11[tt] = yInit[1,1].real
+</code></pre>
+<p>Se le asignan a una variable el estado actual de la matriz evaluada en las dos <a href="../reference/">funciones principales</a>, y luego este valor se le asiga a la variable que almacena el valor de la función <span class="arithmatex">\(f(y,t)\)</span></p>
+<pre><code>    &gt;&gt;&gt; yN = rk4.rk4(rk4.dyn_generator,oOper,yInit,h)
+    &gt;&gt;&gt; yInit = yN
+</code></pre>
+<p>El siguiente código permite crear una gráfica con la evolución de los dos diferentes estados a lo largo del tiempo</p>
+<pre><code>&gt;&gt;&gt; plt.figure(figsize=(4, 2), dpi=300)
+&gt;&gt;&gt; plt.plot(times, stateQuant00, label='Estado (0,0)', color='g')
+&gt;&gt;&gt; plt.plot(times, stateQuant11, label='Estado (1,1)', color ="b")
+&gt;&gt;&gt; plt.xlabel('Tiempo')
+&gt;&gt;&gt; plt.ylabel('Valor del estado')
+&gt;&gt;&gt; plt.legend()
+&gt;&gt;&gt; plt.show()
+</code></pre>
+<p><img alt="Evolucion temporal" src="../Images/grafico.png" /></p>
 
     </div>
 
