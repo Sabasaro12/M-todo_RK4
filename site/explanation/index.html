@@ -18,7 +18,7 @@
     
     
       
-        <title>Explanation - Problema dinámico de valor inicial</title>
+        <title>Método de Runge-Kutta de orden 4 (RK4) - Problema dinámico de valor inicial</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#metodo-de-runge-kutta-de-orden-4-rk4" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Explanation
+              Método de Runge-Kutta de orden 4 (RK4)
             
           </span>
         </div>
@@ -153,7 +158,7 @@
         
   
   <span class="md-ellipsis">
-    Sistemas dinámicos y el método RK4
+    Sistemas dinámicos
   </span>
   
 
@@ -215,12 +220,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Explanation
+    Método de Runge-Kutta de orden 4 (RK4)
   </span>
   
 
@@ -247,6 +254,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -261,9 +270,16 @@
                   
 
 
-  <h1>Explanation</h1>
-
-
+<h1 id="metodo-de-runge-kutta-de-orden-4-rk4">Método de Runge-Kutta de orden 4 (RK4)</h1>
+<p>El método numérico RK4 se basa en estimar la solución a un punto temporal <span class="arithmatex">\(𝑦_𝑛+1\)</span> con base en la solución en el punto temporal <span class="arithmatex">\(𝑦_𝑛\)</span>. Tenemos</p>
+<div class="arithmatex">\[\begin{equation}
+    y_{n+1}=y_n+\frac{1}{6}(k_1+2k_2+2k_3+k_4)
+\end{equation}\]</div>
+<p>Donde</p>
+<div class="arithmatex">\[k_1:=hf(t_n,y_n)\]</div>
+<div class="arithmatex">\[k_2:=hf\left( t_n+\frac{h}{2},y_n+\frac{k_1}{2}\right)\]</div>
+<div class="arithmatex">\[k_3:=hf\left( t_n+\frac{h}{2},y_n+\frac{k_2}{2}\right)\]</div>
+<div class="arithmatex">\[k_4:=hf(t_n+h,y_n+k_3)\]</div>
 
 
 
