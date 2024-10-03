@@ -4,16 +4,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def dyn_generator(oper, state):
-    return -1.0j*(np.dot(oper,state)-np.dot(state,oper))
-""" esta función es dyn_generator.
-Examples:
-        >>> dyn_generator(4.0, 2.0)
-        6.0
+    """ Esta es la función $f(t,y)= −i[𝐎,𝐲(𝑡)]$, la cual se puede expresar como: $−i[𝐎,y(t)]= −i(𝐎 \cdot y(t) - y(t) \cdot 𝐎 )$.
 
-Args:
-    oper:varaible
-    state:variable.
+    Examples:
+        >>> dyn_generator(np.array([[0, 1], [1, 0]]), np.array([[1, 0], [0, 0]]))
+        array([[0.-0.j, 0.+1.j],\\[0.-1.j, 0.-0.j]])
+
+    Args:
+        oper (array): Es un array que representa al operador lineal 𝐎.
+        state (array): Es un array que representa el estado de la función y(t).
+
+    Returns:
+        (array) :Es un array que representa la conmutación $−i[𝐎,𝐲(t)]$.
     """
+    return -1.0j*(np.dot(oper,state)-np.dot(state,oper))
+
 def rk4(func, oper, state, h):
     k1 = h*func(oper,state)
     k2 =h* func(oper + h/2, state + k1/2)
